@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: nacos-server
+  cloud:
+    nacos:
+      config:
+        server-addr: 106.75.231.227:8848
+        file-extension: yml
+        extension-configs[0]:
+          data-id: server_port.yml
+      discovery:
+        server-addr: 106.75.231.227:8848
+        watch-delay: 80000
+        heart-beat-interval: 20000
+        heart-beat-timeout: 100000
+
+
