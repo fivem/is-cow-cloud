@@ -1,15 +1,14 @@
 spring:
   application:
-    name: nacos-server
+    name: nacos-servers
   cloud:
     nacos:
       config:
-        server-addr: 106.75.231.227:8848
+        server-addr: ${spring.cloud.nacos.discovery.server-addr}
         file-extension: yml
-        extension-configs[0]:
-          data-id: server_port.yml
+        name: server-port.yml
       discovery:
-        server-addr: 106.75.231.227:8848
+        server-addr: 192.168.81.81:8848
         watch-delay: 80000
         heart-beat-interval: 20000
         heart-beat-timeout: 100000
