@@ -1,6 +1,6 @@
 spring:
   application:
-    name: nacos-servers
+    name: is-cow-cloud
   cloud:
     nacos:
       config:
@@ -8,14 +8,14 @@ spring:
         file-extension: yml
         name: base-common.yml
       discovery:
-        server-addr: 81.70.56.86:8848
+        server-addr: ${dynamic.ip}:8848
         watch-delay: 80000
         heart-beat-interval: 20000
         heart-beat-timeout: 100000
     sentinel:
       transport:
-        dashboard: 81.70.56.86:8858
-        port: 8719
+        dashboard: ${dynamic.ip}:8858
+        port: 8720
 management:
   endpoints:
     web:
@@ -24,3 +24,7 @@ management:
   endpoint:
     health:
       show-details: always
+
+dynamic:
+  #ip: 192.168.81.1
+  ip: 192.168.81.81
